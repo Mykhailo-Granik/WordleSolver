@@ -1,8 +1,6 @@
 package wordle;
 
 import org.junit.Test;
-import wordle.GuessColorizer;
-import wordle.LetterColor;
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class GuessColorizerTest {
     public void shouldReturnAllGreenWhenAllLettersMatch() {
         assertEquals(
                 List.of(GREEN, GREEN, GREEN, GREEN, GREEN),
-                new GuessColorizer("aaaaa").colorize("bbbbb")
+                new GuessColorizer("aaaaa").colorize("aaaaa")
         );
     }
 
@@ -64,6 +62,21 @@ public class GuessColorizerTest {
         assertEquals(
                 List.of(GREY, GREY, GREY, YELLOW, YELLOW),
                 new GuessColorizer("cacaa").colorize("bbbcc")
+        );
+    }
+
+    @Test
+    public void whenThereAreTwoNotExactMatchesOnlyFirstShouldBeHighlighted() {
+        assertEquals(
+                List.of(GREY, GREY, GREY, YELLOW, GREY),
+                new GuessColorizer("caaaa").colorize("bbbcc")
+        );
+    }
+    @Test
+    public void whenThereAreExactAndNotExactMatchesOnlyExactShouldBeHighlighted() {
+        assertEquals(
+                List.of(GREY, GREY, GREY, GREY, GREEN),
+                new GuessColorizer("aaaac").colorize("bbbcc")
         );
     }
 

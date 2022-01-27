@@ -12,7 +12,7 @@ import java.util.Map;
 @NoArgsConstructor
 @Getter
 @EqualsAndHashCode
-public class MiniMaxResult {
+public class MiniMaxResult implements Guess {
 
     private String guess;
     private int size;
@@ -26,4 +26,8 @@ public class MiniMaxResult {
         }
     }
 
+    @Override
+    public String nextGuess() {
+        return guess;
+    }
 }

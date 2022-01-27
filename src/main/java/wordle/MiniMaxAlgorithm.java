@@ -7,11 +7,12 @@ import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
-public class MiniMaxAlgorithm {
+public class MiniMaxAlgorithm implements GuessCalculator {
 
     private final GuessesProvider guessesProvider;
     private final AnswersProvider answersProvider;
 
+    @Override
     public MiniMaxResult calculate() {
         MiniMaxResult result = new MiniMaxResult();
         guessesProvider.provide().forEach(guess -> {

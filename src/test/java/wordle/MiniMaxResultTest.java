@@ -18,7 +18,7 @@ public class MiniMaxResultTest {
         MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
         underTest.updateIfNeeded(other);
         assertEquals(2, underTest.getSize());
-        assertEquals("a", underTest.getGuess());
+        assertEquals("a", underTest.nextGuess());
         assertEquals(otherBuckets, underTest.getBuckets());
     }
 
@@ -34,7 +34,7 @@ public class MiniMaxResultTest {
         MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
         underTest.updateIfNeeded(other);
         assertEquals(2, underTest.getSize());
-        assertEquals("a", underTest.getGuess());
+        assertEquals("a", underTest.nextGuess());
         assertEquals(otherBuckets, underTest.getBuckets());
     }
 
@@ -50,7 +50,7 @@ public class MiniMaxResultTest {
         MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
         underTest.updateIfNeeded(other);
         assertEquals(1, underTest.getSize());
-        assertEquals("b", underTest.getGuess());
+        assertEquals("b", underTest.nextGuess());
         assertEquals(currentBuckets, underTest.getBuckets());
     }
 

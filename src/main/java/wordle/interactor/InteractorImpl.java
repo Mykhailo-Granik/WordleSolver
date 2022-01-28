@@ -1,5 +1,6 @@
 package wordle.interactor;
 
+import lombok.RequiredArgsConstructor;
 import wordle.LetterColor;
 import wordle.algorithms.Guess;
 import wordle.algorithms.GuessCalculator;
@@ -11,12 +12,12 @@ import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
 
-public class InteractorImpl implements Interactor {
+public abstract class InteractorImpl implements Interactor {
 
-    private final AnswersProvider answersProvider;
-    private final GuessesProvider guessesProvider;
-    private final GuessCalculator guessCalculator;
-    private Guess guess;
+    protected final AnswersProvider answersProvider;
+    protected final GuessesProvider guessesProvider;
+    protected final GuessCalculator guessCalculator;
+    protected Guess guess;
 
     public InteractorImpl() {
         answersProvider = new FileAnswersProvider();
@@ -31,7 +32,6 @@ public class InteractorImpl implements Interactor {
     }
 
     @Override
-    public void processResponse(List<LetterColor> response) {
-        answersProvider.update(guess.answersMatchingResponse(response));
-    }
+    public abstract void processResponse(List<LetterColor> response);
+
 }

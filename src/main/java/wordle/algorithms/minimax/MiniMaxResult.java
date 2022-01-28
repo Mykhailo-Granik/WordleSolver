@@ -9,6 +9,7 @@ import wordle.algorithms.Guess;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,11 +22,18 @@ public class MiniMaxResult implements Guess {
     private Map<List<LetterColor>, List<String>> buckets;
 
     public void updateIfNeeded(MiniMaxResult other) {
-        if (guess == null || other.size < size) {
+        if (shouldUpdate(other)) {
             guess = other.guess;
             size = other.size;
             buckets = other.buckets;
         }
+    }
+
+    private boolean shouldUpdate(MiniMaxResult other) {
+        if (guess == null || other.size < size) {
+            return true;
+        }
+        return (other.size == size) && (new Random().nextInt() % 2 == 0);
     }
 
     @Override

@@ -1,10 +1,14 @@
 package wordle.algorithms.minimax;
 
+import wordle.GuessColorizer;
+import wordle.LetterColor;
+import wordle.WordsMatcher;
 import wordle.dictionary.FileAnswersProvider;
 import wordle.dictionary.FileReader;
 import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FileGuessesProvider implements GuessesProvider {
 
@@ -19,6 +23,13 @@ public class FileGuessesProvider implements GuessesProvider {
     @Override
     public List<String> provide() {
         return guesses;
+    }
+
+    @Override
+    public void update(String guess, List<LetterColor> response) {
+        guesses = guesses.stream()
+                .filter(currentGuess -> new WordsMatcher(guess, currentGuess, response).match())
+                .collect(Collectors.toList());
     }
 
 }

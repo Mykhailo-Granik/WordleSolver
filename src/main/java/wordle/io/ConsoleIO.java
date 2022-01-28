@@ -1,14 +1,15 @@
 package wordle.io;
 
+import wordle.interactor.HardModeInteractor;
 import wordle.interactor.Interactor;
-import wordle.interactor.InteractorImpl;
+import wordle.interactor.EasyModeInteractor;
 
 import java.util.Scanner;
 
 public class ConsoleIO {
 
     public void run() {
-        Interactor interactor = new InteractorImpl();
+        Interactor interactor = new HardModeInteractor();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println(interactor.guess());

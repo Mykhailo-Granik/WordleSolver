@@ -1,9 +1,11 @@
-package wordle;
+package wordle.algorithms.minimax;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import wordle.LetterColor;
+import wordle.algorithms.Guess;
 
 import java.util.List;
 import java.util.Map;

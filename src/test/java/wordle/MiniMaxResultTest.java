@@ -1,6 +1,7 @@
 package wordle;
 
 import org.junit.jupiter.api.Test;
+import wordle.algorithms.minimax.MiniMaxResult;
 
 import java.util.List;
 import java.util.Map;

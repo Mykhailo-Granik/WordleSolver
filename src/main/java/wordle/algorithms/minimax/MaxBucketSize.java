@@ -1,6 +1,7 @@
-package wordle;
+package wordle.algorithms.minimax;
 
 import lombok.RequiredArgsConstructor;
+import wordle.LetterColor;
 
 import java.util.Comparator;
 import java.util.List;

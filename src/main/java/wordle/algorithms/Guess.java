@@ -1,4 +1,4 @@
-package wordle;
+package wordle.algorithms;
 
 public interface Guess {
 

@@ -1,6 +1,7 @@
 package wordle;
 
 import org.junit.jupiter.api.Test;
+import wordle.algorithms.minimax.MaxBucketSize;
 
 import java.util.HashMap;
 import java.util.List;

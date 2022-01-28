@@ -4,8 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import wordle.algorithms.minimax.MiniMaxAlgorithm;
+import wordle.algorithms.minimax.MiniMaxResult;
+import wordle.dictionary.AnswersProvider;
+import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
 import java.util.Map;
@@ -43,7 +46,7 @@ public class MiniMaxAlgorithmTest {
                         1,
                         Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), List.of(onlyWord))
                 ),
-                underTest.calculate()
+                underTest.provide()
         );
     }
 
@@ -60,7 +63,7 @@ public class MiniMaxAlgorithmTest {
                                 List.of(GREY, GREY, GREY, GREY, GREY), List.of("bbbbb")
                         )
                 ),
-                underTest.calculate()
+                underTest.provide()
         );
     }
 

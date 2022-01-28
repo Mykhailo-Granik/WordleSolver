@@ -1,4 +1,8 @@
-package wordle;
+package wordle.algorithms.minimax;
+
+import wordle.dictionary.FileAnswersProvider;
+import wordle.dictionary.FileReader;
+import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
 

@@ -46,7 +46,7 @@ public class MiniMaxAlgorithmTest {
                         1,
                         Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), List.of(onlyWord))
                 ),
-                underTest.provide()
+                underTest.calculate()
         );
     }
 
@@ -63,7 +63,7 @@ public class MiniMaxAlgorithmTest {
                                 List.of(GREY, GREY, GREY, GREY, GREY), List.of("bbbbb")
                         )
                 ),
-                underTest.provide()
+                underTest.calculate()
         );
     }
 

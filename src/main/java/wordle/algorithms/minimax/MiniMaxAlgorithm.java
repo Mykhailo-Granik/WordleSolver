@@ -2,7 +2,7 @@ package wordle.algorithms.minimax;
 
 import lombok.RequiredArgsConstructor;
 import wordle.*;
-import wordle.algorithms.GuessProvider;
+import wordle.algorithms.GuessCalculator;
 import wordle.dictionary.AnswersProvider;
 import wordle.dictionary.GuessesProvider;
 
@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
-public class MiniMaxAlgorithm implements GuessProvider {
+public class MiniMaxAlgorithm implements GuessCalculator {
 
     private final GuessesProvider guessesProvider;
     private final AnswersProvider answersProvider;
 
     @Override
-    public MiniMaxResult provide() {
+    public MiniMaxResult calculate() {
         MiniMaxResult result = new MiniMaxResult();
         guessesProvider.provide().forEach(guess -> {
             BucketsGenerator generator = new BucketsGenerator(

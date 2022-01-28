@@ -32,4 +32,9 @@ public class MiniMaxResult implements Guess {
     public String nextGuess() {
         return guess;
     }
+
+    @Override
+    public List<String> answersMatchingResponse(List<LetterColor> response) {
+        return buckets.get(response);
+    }
 }

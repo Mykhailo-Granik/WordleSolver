@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class BucketsGenerator {
 
+    private final String guess;
     private final AnswersProvider answersProvider;
-    private final GuessColorizer guessColorizer;
 
     public Map<List<LetterColor>, List<String>> generate() {
         return answersProvider.provide().stream()
-                .collect(Collectors.groupingBy(guessColorizer::colorize));
+                .collect(Collectors.groupingBy(answer -> new GuessColorizer(answer).colorize(guess)));
     }
 
 }

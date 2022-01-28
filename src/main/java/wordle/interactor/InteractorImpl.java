@@ -13,9 +13,9 @@ import java.util.List;
 
 public class InteractorImpl implements Interactor {
 
-    private AnswersProvider answersProvider;
-    private GuessesProvider guessesProvider;
-    private GuessCalculator guessCalculator;
+    private final AnswersProvider answersProvider;
+    private final GuessesProvider guessesProvider;
+    private final GuessCalculator guessCalculator;
     private Guess guess;
 
     public InteractorImpl() {

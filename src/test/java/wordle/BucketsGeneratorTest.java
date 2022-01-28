@@ -17,17 +17,16 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class BucketsGeneratorTest {
 
-    public static final String ANSWER = "aaaaa";
+    public static final String GUESS = "aaaaa";
     @Mock
     private AnswersProvider answersProvider;
     private BucketsGenerator underTest;
 
     @BeforeEach
     public  void setup() {
-        GuessColorizer guessColorizer = new GuessColorizer(ANSWER);
         underTest = new BucketsGenerator(
-                answersProvider,
-                guessColorizer
+                GUESS,
+                answersProvider
         );
     }
 

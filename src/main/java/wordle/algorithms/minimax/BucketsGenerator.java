@@ -5,7 +5,6 @@ import wordle.GuessColorizer;
 import wordle.LetterColor;
 import wordle.dictionary.AnswersProvider;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

@@ -1,6 +1,5 @@
 package wordle.interactor;
 
-import lombok.RequiredArgsConstructor;
 import wordle.LetterColor;
 import wordle.algorithms.Guess;
 import wordle.algorithms.GuessCalculator;

@@ -1,6 +1,5 @@
 package wordle.algorithms.minimax;
 
-import wordle.GuessColorizer;
 import wordle.LetterColor;
 import wordle.WordsMatcher;
 import wordle.dictionary.FileAnswersProvider;

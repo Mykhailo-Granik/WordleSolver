@@ -1,15 +1,13 @@
 package wordle.algorithms.minimax;
 
 import lombok.RequiredArgsConstructor;
-import wordle.*;
+import wordle.LetterColor;
 import wordle.algorithms.GuessCalculator;
 import wordle.dictionary.AnswersProvider;
 import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
 import java.util.Map;
-
-import static wordle.LetterColor.GREEN;
 
 @RequiredArgsConstructor
 public class MiniMaxAlgorithm implements GuessCalculator {

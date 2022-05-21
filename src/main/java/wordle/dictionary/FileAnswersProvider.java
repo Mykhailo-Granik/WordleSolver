@@ -14,7 +14,7 @@ public class FileAnswersProvider implements AnswersProvider {
 
     @Override
     public List<String> provide() {
-       return answers;
+        return answers;
     }
 
     @Override

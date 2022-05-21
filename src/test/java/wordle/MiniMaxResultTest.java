@@ -16,11 +16,10 @@ public class MiniMaxResultTest {
         Map<List<LetterColor>, List<String>> otherBuckets = Map.of(
                 List.of(LetterColor.GREY), List.of("a", "b")
         );
-        MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
+        MiniMaxResult other = new MiniMaxResult("a", 2);
         underTest.updateIfNeeded(other);
         assertEquals(2, underTest.getSize());
         assertEquals("a", underTest.nextGuess());
-        assertEquals(otherBuckets, underTest.getBuckets());
     }
 
     @Test
@@ -28,15 +27,14 @@ public class MiniMaxResultTest {
         Map<List<LetterColor>, List<String>> currentBuckets = Map.of(
                 List.of(LetterColor.GREY), List.of("a", "b", "c")
         );
-        MiniMaxResult underTest = new MiniMaxResult("b", 3, currentBuckets);
+        MiniMaxResult underTest = new MiniMaxResult("b", 3);
         Map<List<LetterColor>, List<String>> otherBuckets = Map.of(
                 List.of(LetterColor.GREY), List.of("a", "b")
         );
-        MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
+        MiniMaxResult other = new MiniMaxResult("a", 2);
         underTest.updateIfNeeded(other);
         assertEquals(2, underTest.getSize());
         assertEquals("a", underTest.nextGuess());
-        assertEquals(otherBuckets, underTest.getBuckets());
     }
 
     @Test
@@ -44,15 +42,14 @@ public class MiniMaxResultTest {
         Map<List<LetterColor>, List<String>> currentBuckets = Map.of(
                 List.of(LetterColor.GREY), List.of("a")
         );
-        MiniMaxResult underTest = new MiniMaxResult("b", 1, currentBuckets);
+        MiniMaxResult underTest = new MiniMaxResult("b", 1);
         Map<List<LetterColor>, List<String>> otherBuckets = Map.of(
                 List.of(LetterColor.GREY), List.of("a", "b")
         );
-        MiniMaxResult other = new MiniMaxResult("a", 2, otherBuckets);
+        MiniMaxResult other = new MiniMaxResult("a", 2);
         underTest.updateIfNeeded(other);
         assertEquals(1, underTest.getSize());
         assertEquals("b", underTest.nextGuess());
-        assertEquals(currentBuckets, underTest.getBuckets());
     }
 
 }

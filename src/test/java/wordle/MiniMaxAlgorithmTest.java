@@ -42,8 +42,7 @@ public class MiniMaxAlgorithmTest {
         assertEquals(
                 new MiniMaxResult(
                         onlyWord,
-                        1,
-                        Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), List.of(onlyWord))
+                        1
                 ),
                 underTest.calculate()
         );
@@ -56,11 +55,7 @@ public class MiniMaxAlgorithmTest {
         assertEquals(
                 new MiniMaxResult(
                         "aaaaa",
-                        1,
-                        Map.of(
-                                List.of(GREEN, GREEN, GREEN, GREEN, GREEN), List.of("aaaaa"),
-                                List.of(GREY, GREY, GREY, GREY, GREY), List.of("bbbbb")
-                        )
+                        1
                 ),
                 underTest.calculate()
         );

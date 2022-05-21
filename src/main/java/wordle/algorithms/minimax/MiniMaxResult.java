@@ -19,21 +19,16 @@ public class MiniMaxResult implements Guess {
 
     private String guess;
     private int size;
-    private Map<List<LetterColor>, List<String>> buckets;
 
     public void updateIfNeeded(MiniMaxResult other) {
         if (shouldUpdate(other)) {
             guess = other.guess;
             size = other.size;
-            buckets = other.buckets;
         }
     }
 
     private boolean shouldUpdate(MiniMaxResult other) {
-        if (guess == null || other.size < size) {
-            return true;
-        }
-        return (other.size == size) && (new Random().nextInt() % 2 == 0);
+        return guess == null || other.size < size;
     }
 
     @Override
@@ -41,8 +36,4 @@ public class MiniMaxResult implements Guess {
         return guess;
     }
 
-    @Override
-    public List<String> answersMatchingResponse(List<LetterColor> response) {
-        return buckets.get(response);
-    }
 }

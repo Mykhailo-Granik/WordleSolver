@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import wordle.LetterColor;
 import wordle.algorithms.Guess;
 import wordle.algorithms.GuessCalculator;
+import wordle.algorithms.minimax.BucketsGenerator;
 import wordle.algorithms.minimax.FileGuessesProvider;
 import wordle.algorithms.minimax.MiniMaxAlgorithm;
 import wordle.dictionary.AnswersProvider;
@@ -33,5 +34,10 @@ public abstract class InteractorImpl implements Interactor {
 
     @Override
     public abstract void processResponse(List<LetterColor> response);
+
+    protected List<String> answersMatchingResponse(List<LetterColor> response) {
+        return new BucketsGenerator(guess.nextGuess(), answersProvider)
+                .bucketForResponse(response);
+    }
 
 }

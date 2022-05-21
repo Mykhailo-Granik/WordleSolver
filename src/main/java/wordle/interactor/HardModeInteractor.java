@@ -8,7 +8,7 @@ public class HardModeInteractor extends InteractorImpl {
 
     @Override
     public void processResponse(List<LetterColor> response) {
-        answersProvider.update(guess.answersMatchingResponse(response));
+        answersProvider.update(answersMatchingResponse(response));
         guessesProvider.update(guess.nextGuess(), response);
     }
 }

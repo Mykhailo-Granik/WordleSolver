@@ -34,13 +34,8 @@ public class MiniMaxAlgorithm implements GuessCalculator {
     private MiniMaxResult answer() {
         return new MiniMaxResult(
                 answersProvider.provide().get(0),
-                1,
-                answerBucket()
+                1
         );
-    }
-
-    private Map<List<LetterColor>, List<String>> answerBucket() {
-        return Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), answersProvider.provide());
     }
 
     private MiniMaxResult miniMaxForGuess(String guess) {
@@ -50,7 +45,7 @@ public class MiniMaxAlgorithm implements GuessCalculator {
         );
         Map<List<LetterColor>, List<String>> buckets = generator.generate();
         MaxBucketSize maxBucketSize = new MaxBucketSize(buckets);
-        return new MiniMaxResult(guess, maxBucketSize.maxSize(), buckets);
+        return new MiniMaxResult(guess, maxBucketSize.maxSize());
     }
 
 }

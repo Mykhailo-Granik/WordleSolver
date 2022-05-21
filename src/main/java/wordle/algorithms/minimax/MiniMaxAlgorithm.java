@@ -1,7 +1,7 @@
 package wordle.algorithms.minimax;
 
 import lombok.RequiredArgsConstructor;
-import wordle.LetterColor;
+import wordle.colorizing.LetterColor;
 import wordle.algorithms.GuessCalculator;
 import wordle.dictionary.AnswersProvider;
 import wordle.dictionary.GuessesProvider;

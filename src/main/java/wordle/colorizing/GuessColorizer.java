@@ -1,4 +1,4 @@
-package wordle;
+package wordle.colorizing;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,8 +15,7 @@ public class GuessColorizer {
 
     public List<LetterColor> colorize(String guess) {
         usedAnswerPositions = new HashSet<>();
-        List<LetterColor> result = initializeAllGrey();
-        result = markExactMatches(guess, result);
+        List<LetterColor> result = markExactMatches(guess, initializeAllGrey());
         return markNotExactMaches(guess, result);
     }
 
@@ -28,7 +27,8 @@ public class GuessColorizer {
         return result;
     }
 
-    private List<LetterColor> markExactMatches(String guess, List<LetterColor> result) {
+    private List<LetterColor> markExactMatches(String guess, List<LetterColor> allGrey) {
+        List<LetterColor> result = new ArrayList<>(allGrey);
         for (int i = 0; i < answer.length(); ++i) {
             if (answer.charAt(i) == guess.charAt(i)) {
                 result.set(i, LetterColor.GREEN);

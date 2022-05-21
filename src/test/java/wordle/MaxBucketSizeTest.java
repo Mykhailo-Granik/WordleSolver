@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static wordle.LetterColor.*;
+import static wordle.colorizing.LetterColor.*;
 
 public class MaxBucketSizeTest {
 

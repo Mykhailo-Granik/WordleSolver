@@ -1,6 +1,6 @@
 package wordle.dictionary;
 
-import wordle.LetterColor;
+import wordle.colorizing.LetterColor;
 
 import java.util.List;
 
@@ -8,6 +8,6 @@ public interface GuessesProvider {
 
     List<String> provide();
 
-    void update(String guess, List<LetterColor> response);
+    void update(List<String> updated);
 
 }

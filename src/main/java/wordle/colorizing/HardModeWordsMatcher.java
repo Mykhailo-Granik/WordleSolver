@@ -1,4 +1,4 @@
-package wordle;
+package wordle.colorizing;
 
 import lombok.RequiredArgsConstructor;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 @RequiredArgsConstructor
-public class WordsMatcher {
+public class HardModeWordsMatcher {
 
     private final String previousGuess;
     private final String nextGuess;

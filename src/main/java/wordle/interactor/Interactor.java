@@ -1,6 +1,6 @@
 package wordle.interactor;
 
-import wordle.LetterColor;
+import wordle.colorizing.LetterColor;
 
 import java.util.List;
 

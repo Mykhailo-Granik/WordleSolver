@@ -2,11 +2,12 @@ package wordle;
 
 
 import org.junit.jupiter.api.Test;
+import wordle.colorizing.GuessColorizer;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static wordle.LetterColor.*;
+import static wordle.colorizing.LetterColor.*;
 
 public class GuessColorizerTest {
 

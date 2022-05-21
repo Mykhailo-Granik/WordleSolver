@@ -11,11 +11,9 @@ import wordle.dictionary.AnswersProvider;
 import wordle.dictionary.GuessesProvider;
 
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
-import static wordle.LetterColor.*;
 
 @ExtendWith(MockitoExtension.class)
 public class MiniMaxAlgorithmTest {

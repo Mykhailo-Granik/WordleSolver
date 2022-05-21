@@ -1,8 +1,8 @@
 package wordle.algorithms.minimax;
 
 import lombok.RequiredArgsConstructor;
-import wordle.GuessColorizer;
-import wordle.LetterColor;
+import wordle.colorizing.GuessColorizer;
+import wordle.colorizing.LetterColor;
 import wordle.dictionary.AnswersProvider;
 
 import java.util.Collections;

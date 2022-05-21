@@ -1,6 +1,7 @@
 package wordle;
 
 import org.junit.jupiter.api.Test;
+import wordle.colorizing.LetterColor;
 
 import static org.junit.jupiter.api.Assertions.*;
 

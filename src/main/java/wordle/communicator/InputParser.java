@@ -1,6 +1,6 @@
 package wordle.communicator;
 
-import wordle.LetterColor;
+import wordle.colorizing.LetterColor;
 
 import java.util.List;
 

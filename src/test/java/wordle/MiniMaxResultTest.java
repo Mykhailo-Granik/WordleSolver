@@ -2,6 +2,7 @@ package wordle;
 
 import org.junit.jupiter.api.Test;
 import wordle.algorithms.minimax.MiniMaxResult;
+import wordle.colorizing.LetterColor;
 
 import java.util.List;
 import java.util.Map;

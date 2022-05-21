@@ -16,11 +16,11 @@ public class FileReader {
     private final String path;
 
     public List<String> read() {
-        List<String> result = new ArrayList<>();
+        List<String> result;
         try (Stream<String> lines = Files.lines(Paths.get(path))) {
             result = lines.collect(Collectors.toList());
         } catch (IOException e) {
-            // TODO: handle the exception;
+            throw new RuntimeException(e);
         }
         return result;
     }

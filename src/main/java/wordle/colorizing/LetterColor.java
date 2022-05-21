@@ -1,4 +1,4 @@
-package wordle;
+package wordle.colorizing;
 
 public enum LetterColor {
 

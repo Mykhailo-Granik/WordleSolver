@@ -38,7 +38,6 @@ public class MiniMaxAlgorithmTest {
     @Test
     public void whenThereIsOnlyOnePossibleAnswerResultShouldIndicateIt() {
         String onlyWord = "aaaaa";
-        when(guessesProvider.provide()).thenReturn(List.of(onlyWord));
         when(answersProvider.provide()).thenReturn(List.of(onlyWord));
         assertEquals(
                 new MiniMaxResult(

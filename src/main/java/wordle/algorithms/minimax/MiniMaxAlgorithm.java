@@ -19,25 +19,38 @@ public class MiniMaxAlgorithm implements GuessCalculator {
 
     @Override
     public MiniMaxResult calculate() {
-        if (answersProvider.provide().size() == 1) {
-            return new MiniMaxResult(
-                    answersProvider.provide().get(0),
-                    1,
-                    Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), answersProvider.provide())
-            );
+        if (answerIssCertain()) {
+            return answer();
         }
         MiniMaxResult result = new MiniMaxResult();
-        guessesProvider.provide().forEach(guess -> {
-            BucketsGenerator generator = new BucketsGenerator(
-                    guess,
-                    answersProvider
-            );
-            Map<List<LetterColor>, List<String>> buckets = generator.generate();
-            MaxBucketSize maxBucketSize = new MaxBucketSize(buckets);
-            MiniMaxResult currentResult = new MiniMaxResult(guess, maxBucketSize.maxSize(), buckets);
-            result.updateIfNeeded(currentResult);
-        });
+        guessesProvider.provide().forEach(guess -> result.updateIfNeeded(miniMaxForGuess(guess)));
         return result;
+    }
+
+    private boolean answerIssCertain() {
+        return answersProvider.provide().size() == 1;
+    }
+
+    private MiniMaxResult answer() {
+        return new MiniMaxResult(
+                answersProvider.provide().get(0),
+                1,
+                answerBucket()
+        );
+    }
+
+    private Map<List<LetterColor>, List<String>> answerBucket() {
+        return Map.of(List.of(GREEN, GREEN, GREEN, GREEN, GREEN), answersProvider.provide());
+    }
+
+    private MiniMaxResult miniMaxForGuess(String guess) {
+        BucketsGenerator generator = new BucketsGenerator(
+                guess,
+                answersProvider
+        );
+        Map<List<LetterColor>, List<String>> buckets = generator.generate();
+        MaxBucketSize maxBucketSize = new MaxBucketSize(buckets);
+        return new MiniMaxResult(guess, maxBucketSize.maxSize(), buckets);
     }
 
 }

@@ -18,6 +18,7 @@ public class FileGuessesProvider implements GuessesProvider {
     public FileGuessesProvider() {
         guesses = new FileReader(GUESSES_PATH).read();
         guesses.addAll(new FileReader(FileAnswersProvider.PATH).read());
+        guesses = guesses.stream().distinct().collect(Collectors.toList());
     }
 
     @Override

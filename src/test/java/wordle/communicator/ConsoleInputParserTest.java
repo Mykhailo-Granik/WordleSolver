@@ -1,8 +1,8 @@
-package wordle.io;
+package wordle.communicator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import wordle.LetterColor;
+import wordle.communicator.console.ConsoleInputParser;
 
 import java.util.Collections;
 import java.util.List;
@@ -10,13 +10,13 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static wordle.LetterColor.*;
 
-public class InputParserTest {
+public class ConsoleInputParserTest {
 
-    private InputParser underTest;
+    private ConsoleInputParser underTest;
 
     @BeforeEach
     public void setup() {
-        underTest = new InputParser();
+        underTest = new ConsoleInputParser();
     }
 
     @Test

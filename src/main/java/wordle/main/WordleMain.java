@@ -1,8 +1,9 @@
 package wordle.main;
 
-import wordle.communicator.UserCommunicator;
-import wordle.communicator.console.ConsoleCommunicator;
+import wordle.communicator.Communicator;
+import wordle.communicator.CommunicatorImpl;
 import wordle.communicator.console.ConsoleGuessVerifier;
+import wordle.communicator.console.ConsoleInputOutput;
 import wordle.communicator.console.ConsoleInputParser;
 import wordle.interactor.InteractorFactory;
 
@@ -12,11 +13,12 @@ public class WordleMain {
         userCommunicator().communicate();
     }
 
-    private static UserCommunicator userCommunicator() {
-        return new ConsoleCommunicator(
+    private static Communicator userCommunicator() {
+        return new CommunicatorImpl(
                 new InteractorFactory().create(),
                 new ConsoleInputParser(),
-                new ConsoleGuessVerifier()
+                new ConsoleGuessVerifier(),
+                new ConsoleInputOutput()
         );
     }
 

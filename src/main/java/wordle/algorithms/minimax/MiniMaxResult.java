@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import wordle.algorithms.Guess;
 
+import java.util.Random;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -23,7 +25,7 @@ public class MiniMaxResult implements Guess {
     }
 
     private boolean shouldUpdate(MiniMaxResult other) {
-        return guess == null || other.size < size;
+        return guess == null || other.size < size || (other.size == size && new Random().nextInt(2) == 0);
     }
 
     @Override

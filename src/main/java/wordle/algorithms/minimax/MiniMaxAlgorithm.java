@@ -17,7 +17,7 @@ public class MiniMaxAlgorithm implements GuessCalculator {
 
     @Override
     public MiniMaxResult calculate() {
-        if (answerIssCertain()) {
+        if (answerIsCertain()) {
             return answer();
         }
         MiniMaxResult result = new MiniMaxResult();
@@ -25,7 +25,7 @@ public class MiniMaxAlgorithm implements GuessCalculator {
         return result;
     }
 
-    private boolean answerIssCertain() {
+    private boolean answerIsCertain() {
         return answersProvider.provide().size() == 1;
     }
 

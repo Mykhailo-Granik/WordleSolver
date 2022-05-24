@@ -1,6 +1,6 @@
 package wordle.communicator;
 
-public interface UserCommunicator {
+public interface Communicator {
 
     void communicate();
 
